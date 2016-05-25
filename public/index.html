@@ -7,76 +7,77 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/vendor/jwt-decode.2.0.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 </head>
 <body>
 
+<header class="header" role="banner">
+  <div class="container">
+    <div class="header__global">
+       <a href="#" class="header__link " id="search-form" rel="#js-search" data-name="search">
+         <span aria-hidden="true"> </span>Search
+       </a>
+
+        <a href="#" class="header__link header__link--stores" title="Stores">
+          Stores
+        </a>
+      </div>
 
 
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo center black-text text-lighten-2">Intuition</a>
-      <ul class="right hide-on-med-and-down">
-      </ul>
+
+
+
+      <a id="logo-container" href="#" class="brand-logo center black-text text-lighten-2"<span aria-hidden="true" class="icon-logo"></span>Intuition</a>
+
+
+    <div class="header__personal">
+
+          <a href="#" ng-hide="vm.authService.isLoggedIn()" ui-sref="signin">Sign in</a>
+          <a href="#" ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</>
+
+      <a class="header__link header__link--bag js-flyout-link is-empty" href="" rel="#js-bag" data-name="bag">
+        <span aria-hidden="true" class="icon-bag header__icon" data-grunticon-embed></span>Shopping Bag <sup id="js-bag-count" class="bag-count">0</sup>
+      </a>
+
+    </div>
+
+<!--
       <a ui-sref="welcome" <a class="btn-flat disabled">Home</a>
-          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" <a class="btn-flat disabled">Sign in</button>
-          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+
 
       <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
         <li><a href="#">Navbar Link</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
 
-<nav class="nav">
-  <div class="nav-main">
-    <ul class="nav-main-list">
-      <li class="nav-main-item">
-        <a href="" class="nav-main-link">Shoes</a>
-      </li>
-      <li class="nav-main-item">
-        <a href="" class="nav-main-link">Dresses</a>
-      </li>
-      <li class="nav-main-item">
-        <a href="" class="nav-main-link">Accessories</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<!--
-  <div id="main-container">
-    <div class="panels-container hidden-xs">
-      <div id="panel-left" class="panel">
-        <h2 class="panel-title"><span>Diary</span></h2>
-        <div class="panel-content">
-
- add panel content here
-
-        </div>
       </div>
     </div>
-  </div> -->
+</header>
 
 
+<script> $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>
 
-    <main class="content" ui-view>
+<main class="content" ui-view>
       ui-router (aka ui.router) inserts templates here
-    </main>
+</main>
 
 
-  <footer>
+<!-- <footer>
     <hr>
     <span>Made with <i class="tiny material-icons">grade</i> in DTLA.</span>
     <br>
     <span>© 2016, WDI</span>
-  </footer>
+  </footer> -->
 
   <script src="/js/app.module.js"></script>
   <script src="/js/app.routes.js"></script>
