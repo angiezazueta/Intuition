@@ -24,6 +24,15 @@
         templateUrl: "/js/profile.html"
       });
 
+      // .state("collection1", {
+      //   url:         "/",
+      //   templateUrl: "/js/collection1.html"
+      // })
+
+      // .state("collection2", {
+      //   url:         "/",
+      //   templateUrl: "/js/collection2.html"
+      // });
     $urlRouterProvider.otherwise("/");
   }
 

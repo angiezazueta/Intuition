@@ -4,6 +4,8 @@ var mongoose = require('mongoose'),
 mongoose.Promise = Promise;
 
 var productSchema = new mongoose.Schema({
+  name: String,
+  price: String,
   size: String,
   color: String,
   quantity: Number,

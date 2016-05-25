@@ -5,7 +5,9 @@ var mongoose = require('mongoose'),
 var userSchema = new mongoose.Schema({
   name:  { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  admin: { type: Boolean, required: true, default: false }
+  admin: { type: Boolean, required: true, default: false },
+  shoppingBag: [{product}]
+  // ask what to put inside shopping bag array!!!
 });
 
 // add bcrypt hashing to model (works on a password field)!

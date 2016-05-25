@@ -102,7 +102,6 @@ function mustBeAdmin(req, res, next) {
   if (!req.decoded.admin) return next({status: 401, message: 'Not an admin user'});
 
   next();
-
 }
  // ****************************** HELPERS ******************************
 
