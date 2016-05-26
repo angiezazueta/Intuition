@@ -24,7 +24,7 @@
     function logIn(data) {
       var promise = $http({
         method: 'POST',
-        url:    '/api/token',
+        url:    '/token',
         data:   data,
         headers: {
           'Content-Type': 'application/json'

@@ -22,17 +22,32 @@
       .state("profile", {
         url:         "/profile",
         templateUrl: "/js/profile.html"
+      })
+
+      // .state("product-show", {
+      //   url:         "/product-show",
+      //   templateUrl: "/js/product-show.html"
+      // });
+        .state('productShow', {
+        url: '/products/show/:id',
+        templateUrl: 'js/products/product-show.html',
+        controller: 'ProductShowController',
+        controllerAs: 'productShowVm'
+      })
+      .state('productNew', {
+        url: '/products/new',
+        templateUrl: 'js/products/product-new.html',
+        controller: 'ProductNewController',
+        controllerAs: 'productNewVm'
+      })
+      .state('productEdit', {
+        url: '/products/edit/:id',
+        templateUrl: 'js/products/product-edit.html',
+        controller: 'ProductEditController',
+        controllerAs: 'productEditVm'
       });
 
-      // .state("collection1", {
-      //   url:         "/",
-      //   templateUrl: "/js/collection1.html"
-      // })
 
-      // .state("collection2", {
-      //   url:         "/",
-      //   templateUrl: "/js/collection2.html"
-      // });
     $urlRouterProvider.otherwise("/");
   }
 

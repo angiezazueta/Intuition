@@ -1,0 +1,20 @@
+<div ng-if="vm.products[0].type === 'dress'">
+  <img class="responsive-img" src="">
+</div>
+<div ng-if="vm.products[0].type === 'shoes'">
+  <img class="responsive-img" src="">
+</div>
+<div ng-if="vm.products[0].type === 'handbag'">
+  <img class="responsive-img" src="">
+</div>
+
+
+<div class="row" id="product-section">
+  <div class="col s12 m7">
+    <img class="product-image" ng-repeat="product in vm.products" ng-src="{{product.imageURL}}"
+      ng-click="vm.showProduct(product)"
+      class="block-product-{{$index+1}}">
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>

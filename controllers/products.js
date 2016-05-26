@@ -10,7 +10,7 @@ module.exports = {
 }
 
 function index(req, res, next) {
-  Product.find({}, function(err, shows) {
+  Product.find({}, function(err, products) {
     if (err) next(err);
 
     res.json(products);
@@ -20,7 +20,7 @@ function index(req, res, next) {
 function show(req, res, next) {
   var id = req.params.id;
 
-  Product.findById(id, function(err, show) {
+  Product.findById(id, function(err, product) {
     if (err) next(err);
 
     res.json(product);
@@ -42,17 +42,22 @@ function create(req, res, next) {
 function update(req, res, next) {
   var id = req.params.id;
 
-  Show.findById(id, function(err, show) {
+  Product.findById(id, function(err, product) {
     if (err) next(err);
 
-    show.title = req.body.title;
-    show.length = req.body.length;
-    show.source = req.body.source;
+    product.name = req.body.name;
+    product.price = req.body.price;
+    product.size = req.body.size;
+    product.color = req.body.color;
+    product.quantity = req.body.quantity;
+    product.type = req.body.type;
+    product.imageURL = req.body.imageURL;
 
-    show.save(function(err, updatedShow) {
+
+    product.save(function(err, updatedProduct) {
       if (err) next(err);
 
-      res.json(updatedShow);
+      res.json(updatedProduct);
     });
 
   });
@@ -60,9 +65,9 @@ function update(req, res, next) {
 
 function destroy(req, res, next) {
   var id = req.params.id;
-  Show.remove({_id:id}, function(err) {
+  Product.remove({_id:id}, function(err) {
     if (err) next(err);
 
-    res.json({message: 'Show successfully deleted'});
+    res.json({message: 'Product successfully deleted'});
   });
 }

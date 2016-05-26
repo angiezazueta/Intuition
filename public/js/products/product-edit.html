@@ -1,0 +1,38 @@
+<div>
+  <h3>Edit This Product</h3>
+  <form id='edit-product' ng-submit="productEditVm.editProduct()">
+    <div>
+      <label for="title">Name:</label>
+      <input type="text" name="name" ng-model="productEditVm.product.name">
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" name="length" ng-model="productEditVm.product.price">
+    </div>
+    <div>
+      <label for="size">Size:</label>
+      <input type="text" name="size" ng-model="productEditVm.product.size">
+    </div>
+    <div>
+      <label for="color">Color:</label>
+      <input type="text" name="color" ng-model="productEditVm.product.color">
+    </div>
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" ng-model="productEditVm.product.quantity">
+    </div>
+    <div>
+      <label for="type">Type:</label>
+      <input type="text" name="type" ng-model="productEditVm.product.type">
+    </div>
+    <div>
+      <label for="imageURL">imageURL:</label>
+      <input type="text" name="imageURL" ng-model="productEditVm.product.imageURL">
+    </div>
+
+    <input type="submit" value="Edit">
+  </form>
+</div>
+
+
+

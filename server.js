@@ -6,14 +6,14 @@ var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var debug        = require('debug')('app:http');
 
+require('dotenv').load();
+
 // Load local libraries.
 var mongoose = require('./config/database'),
     routes   = require('./config/routes');
 
 // Instantiate a server application.
 var app = express();
-
-require('dotenv').load();
 
 // Configure the application (and set it's title!).
 app.set('title', process.env.TITLE);

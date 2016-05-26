@@ -19,7 +19,7 @@
 <body>
 
 
-<header class="header" role="banner">
+<header class="header" role="banner" ng-controller="NavbarController as vm">
   <div class="container">
       <a id="logo-container" href="#" class="brand-logo center black-text text-lighten-2">Intuition</a>
   </div>
@@ -54,7 +54,7 @@
         <span aria-hidden="true" class="icon-bag header__icon" data-grunticon-embed></span>Shopping Bag <sup id="js-bag-count" class="bag-count">0</sup>
 
        <a href="#" ng-hide="vm.authService.isLoggedIn()" ui-sref="signin">Sign in</a>
-          <a href="#" ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</>
+        <a href="#" ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</>
           </a>
       </a>
     </div>
@@ -76,12 +76,22 @@
     <span>© 2016, WDI</span>
   </footer> -->
 
+  <!-- <script src="js/app.js" charset="utf-8"></script> -->
   <script src="/js/app.module.js"></script>
+  <script src="js/config/app.httpInterceptors.js"></script>
+  <script src="js/config/jsonHeaders.service.js"></script>
+  <script src="js/config/tokenSigning.service.js"></script>
+  <script src="js/config/authErrorRedirect.service.js"></script>
+  <script src="js/config/app.debug.js"></script>
+  <script src="js/products/productsController.js" charset="utf-8"></script>
+  <script src="js/products/ProductResource.js" charset="utf-8"></script>
   <script src="/js/app.routes.js"></script>
   <script src="/js/token.service.js"></script>
   <script src="/js/auth.service.js"></script>
   <script src="/js/user.service.js"></script>
   <script src="/js/signin.controller.js"></script>
   <script src="/js/navbar.controller.js"></script>
+
+
 </body>
 </html>
