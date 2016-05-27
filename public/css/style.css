@@ -129,7 +129,7 @@ form {
     color: black;
 }
 .photo {
-  float: left;
+ /* float: left;*/
   display: inline-block;
 }
 .items {
