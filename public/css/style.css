@@ -246,4 +246,17 @@ section {
 .pscroll {
     height: 200px;
     overflow: scroll;
-  }
+}
+
+.photo {
+  height: 350px;
+}
+
+.row {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.showimage {
+  float: left;
+}

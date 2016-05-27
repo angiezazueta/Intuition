@@ -1,19 +1,20 @@
 <div class="showproduct">
-  <div class="showdetails">
-<p>{{productShowVm.product.name}}</p>
-<p>{{productShowVm.product.price}}</p>
+
+<p>{{productShowVm.product.name | limitTo : 20}}</p>
+<p>{{productShowVm.product.price | currency}}</p>
 <p>{{productShowVm.product.size}}</p>
 <p>{{productShowVm.product.color}}</p>
 <p>{{productShowVm.product.quantity}}</p>
 <p>{{productShowVm.product.type}}</p>
-</div>
-<div class="showimage">
-<img ng-src="{{productShowVm.product.imageURL}}">
-</div>
-</div>
-<a ui-sref="productEdit({id:productShowVm.product._id})">Edit This Product</a>
 
+
+<img ng-src="{{productShowVm.product.imageURL}}">
+<br>
+<a ui-sref="productEdit({id:productShowVm.product._id})">Edit This Product</a>
+<br>
 <a ui-sref="productList">Continue</a>
+<br>
 <a ui-sref="shoppingBag({id:productShowVm.product._id})">Add To Shopping Bag</a>
+</div>
 <!-- <button ng-click="vm.addToBag(vm.product)" id="add-product-button">Add to Bag</button>
  -->
