@@ -47,7 +47,9 @@
 
         </ul>
        <a class="header__link " ui-sref="shoppingBag" rel="#js-bag" data-name="bag">
-        <span aria-hidden="true" class="icon-bag header__icon" data-grunticon-embed></span>Shopping Bag <sup id="js-bag-count" class="bag-count">0</sup>
+        <span aria-hidden="true" class="icon-bag header__icon" data-grunticon-embed></span>
+        Shopping Bag
+        <sup id="js-bag-count" class="bag-count" ng-init="counter=0">{{counter}}</sup>
 
        <a class="header__link" ng-hide="vm.authService.isLoggedIn()" ui-sref="signin">Sign in</a>
         <a class="header__link" ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</>

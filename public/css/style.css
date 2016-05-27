@@ -128,7 +128,16 @@ form {
     font-size: 0.875rem;
     color: black;
 }
-
+.photo {
+  float: left;
+  display: inline-block;
+}
+.items {
+  margin-left: 50px;
+  float: right;
+  display: inline-block;
+  text-align: center;
+}
 section {
     width: 80%;
     height: 200px;
@@ -141,8 +150,17 @@ section {
   width: 75%;
   margin: 0 auto;
   margin-top: 20px;
-}
 
+}
+.slider > .slides > li > img {
+  height: 100%;
+    width: 100%;
+    background-position: inherit;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+
+
+}
 
 .dresses {
   margin-top: 40px;

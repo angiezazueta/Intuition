@@ -1,13 +1,14 @@
-<div class="showproduct">
+<div class="container">
 
+  <div class="items" align="right">
 <p>{{productShowVm.product.name | limitTo : 20}}</p>
 <p>{{productShowVm.product.price | currency}}</p>
 <p>{{productShowVm.product.size}}</p>
 <p>{{productShowVm.product.color}}</p>
 <p>{{productShowVm.product.quantity}}</p>
 <p>{{productShowVm.product.type}}</p>
-
-
+  </div>
+<div class="photo" align="left">
 <img ng-src="{{productShowVm.product.imageURL}}" class="picture">
 <br>
 <a ui-sref="productEdit({id:productShowVm.product._id})">Edit This Product</a>
@@ -15,6 +16,7 @@
 <a ui-sref="shoppingBag({id:productShowVm.product._id})">Add To Shopping Bag</a>
 <br>
 <a ui-sref="productList">Back</a>
+</div>
 </div>
 <!-- <button ng-click="vm.addToBag(vm.product)" id="add-product-button">Add to Bag</button>
  -->
