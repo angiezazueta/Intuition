@@ -28,7 +28,7 @@ router.route('/users')
 
 router.route('/users/me')
   .get(token.authenticate, usersCtrl.me);
-// when creating the route for addtobag use tokenn.authenticate
+// when creating the route for addtobag use token.authenticate
 router.route('/token')
   .post(token.create);
 

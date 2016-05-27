@@ -16,7 +16,8 @@
       vm.destroy = destroy;
 
       ProductResource.query().$promise.then(function(products) {
-        vm.product = products;
+        vm.products = products;
+
       });
 
       function destroy(productToDelete) {
@@ -46,7 +47,7 @@
       function addProduct() {
         ProductResource.save(vm.newProduct).$promise.then(function(jsonProduct) {
           vm.newProduct = {};
-          $state.go('showProduct', {id: jsonProduct._id});
+          $state.go('productShow', {id: jsonProduct._id});
         });
       }
     }
@@ -58,12 +59,15 @@
 
       ProductResource.get({id: $stateParams.id}).$promise.then(function(jsonProduct) {
           vm.product = jsonProduct;
+          vm.product.price = parseInt(vm.product.price)
+         vm.product.quantity = parseInt(vm.product.quantity)
+
       });
 
       function editProduct() {
         ProductResource.update({id: vm.product._id}, vm.product).$promise.then(function(updatedProduct) {
           vm.product = updatedProduct;
-          $state.go('showProduct', {id: updatedProduct._id});
+          $state.go('productShow', {id: updatedProduct._id});
         });
       }
     }

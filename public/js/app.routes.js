@@ -24,10 +24,6 @@
         templateUrl: "/js/profile.html"
       })
 
-      // .state("product-show", {
-      //   url:         "/product-show",
-      //   templateUrl: "/js/product-show.html"
-      // });
         .state('productShow', {
         url: '/products/show/:id',
         templateUrl: 'js/products/product-show.html',
@@ -45,8 +41,17 @@
         templateUrl: 'js/products/product-edit.html',
         controller: 'ProductEditController',
         controllerAs: 'productEditVm'
+      })
+      .state('productList', {
+        url: '/products/list',
+        templateUrl: 'js/products/product-list.html',
+        controller: 'ProductListController',
+        controllerAs: 'productListVm'
+      })
+      .state('shoppingBag', {
+        url: '/shoppingbag',
+        templateUrl: 'js/shoppingbag.html',
       });
-
 
     $urlRouterProvider.otherwise("/");
   }
