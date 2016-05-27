@@ -21,14 +21,16 @@
       });
 
       function destroy(productToDelete) {
-        ProductResource.delete({id: productToDelete._id}).$promise.then(function (response) {
-          console.log(response.message);
-          vm.products = vm.products.filter(function(product) {
-            return product != productToDelete;
-          });
-        });
+        if (window.confirm("Are you sure you want to delete this product?")) {
+            ProductResource.delete({id: productToDelete._id}).$promise.then(function (response) {
+              console.log(response.message);
+              vm.products = vm.products.filter(function(product) {
+                return product != productToDelete;
+              });
+            });
+          }
+        }
       }
-    }
 
     function ProductShowController(ProductResource, $stateParams) {
       var vm = this;

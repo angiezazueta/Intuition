@@ -7,8 +7,7 @@ var Product = require('../models/product')
 
 var user = [
   {name: "Angie Zazueta", email: "angiewzazueta@gmail.com", admin: "true", password: "12345", passwordConformation: "12345"},
-  {name: "test1", email: "test1@test1.com", password: "test1", passwordConformation:"test1", admin: "false"},
-  {name: "Joe Dirt", email: "abc@123.com", password: "123", passwordConformation:"123", admin: "false"},
+
 
 ]
 
